@@ -20,3 +20,12 @@ export const Container = styled.div`
         margin: 0 auto;
         padding-top: 80px;
 `
+
+export const BntDefault = styled.button`
+        background-color: var(--pink);
+        color: white;
+        padding: 4px 6px;
+        font-size: 14px;
+        font-weight: bold;
+        border: none ;
+`
