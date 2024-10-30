@@ -4,6 +4,8 @@
 
 <https://www.figma.com/design/JjduV2Tg713TzYUUsees8b/efood?node-id=0-1&node-type=canvas&t=JcAVhFNXYkx5qSrj-0>
 
+<https://efood-two-wine.vercel.app>
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
