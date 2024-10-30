@@ -5,10 +5,10 @@ export const HeaderHero = styled.header`
     background-image: url(${headerImg});
     width: 100%;
     display: block;
-    background: cover;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 64px;    
-    padding-bottom: 150px;
+    padding-top: 64px;
+    padding-bottom: 40px;
     
     img {
         display: flex;
@@ -21,6 +21,6 @@ export const Titulo = styled.h1`
     font-size: 36px;
     color: var(--pink);
     justify-content: center;
-    text-align: center;   
-
+    text-align: center;
+    margin-bottom: 20px;
 `
