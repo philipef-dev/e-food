@@ -3,26 +3,30 @@ import imgCard_1 from '../../assets/images/imgCard-1.png';
 
 export const RestauranteSection = styled.section`
     display: grid;
-    grid-template-columns: 1gr 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 48px;
     margin-bottom: 50px;
 `
 
 export const Card = styled.div`
-    padding: 8px;
     border: 1px solid var(--pink);
     width: 472px;   
+`
+
+export const MainCard = styled.main`
+    padding: 8px;
+
 `
 
 export const BackroundImgCard = styled.div`
     background-image: url(${imgCard_1});
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
     justify-content: end;
     gap: 8px;
     padding-right: 16px;
-
     padding-top: 16px;
     padding-bottom: 175px;
 `
@@ -56,5 +60,3 @@ export const Description = styled.p`
     color: var(--pink);
     margin-bottom: 16px;
 `
-
-
