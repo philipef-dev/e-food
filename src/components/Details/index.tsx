@@ -2,12 +2,12 @@ import logoEfood from '../../assets/images/logoE-food.svg';
 import fundoCard from '../../assets/images/pizzaImg.png';
 import { Container } from '../../styles/global';
 import Footer from '../Footer';
-import { BannerDetails, CardDetails, HeaderDetails, SectionCardsDetails } from './styles';
+import { BannerDetails, CardDetails, HeaderDetails, SectionCardsDetails, StyledLink } from './styles';
 
 const RestaurantDetails = () => (
     <>
         <HeaderDetails>
-            <h2>Restaurantes</h2>
+            <StyledLink to={'/'}>Restaurantes</StyledLink>
             <div>
                 <img src={logoEfood} alt="" />
             </div>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import headerImg from '../../assets/images/fundoHeader.png'
 import bannerImg from '../../assets/images/fundoBanner.png'
+import { Link } from 'react-router-dom'
 
 export const HeaderDetails = styled.div`
     background-image: url(${headerImg});
@@ -12,6 +13,11 @@ export const HeaderDetails = styled.div`
     display: flex;
     justify-content: space-between;
     color: var(--pink);
+    align-items: center;
+
+    h2 {
+        font-size: 18px;
+    }
 `
 
 export const BannerDetails = styled.div`
@@ -27,8 +33,8 @@ export const BannerDetails = styled.div`
         font-weight: 100;
         color: white;
         margin-bottom: 156px;
-    }
-
+    } 
+    
     h2 {
         font-weight: 900;
         font-size: 32px;
@@ -76,5 +82,9 @@ export const CardDetails = styled.div`
         margin-top: 8px;
     }
 `
-
-
+export const StyledLink = styled(Link)`
+    color: var(--pink);
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+`
