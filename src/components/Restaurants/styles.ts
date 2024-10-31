@@ -1,7 +1,33 @@
 import styled from "styled-components";
+import headerImg from '../../assets/images/fundoHeader.png'
 import imgCard_1 from '../../assets/images/imgCard-1.png';
 
-export const RestauranteSection = styled.section`
+export const RestaurantsHeader = styled.header`
+    background-image: url(${headerImg});
+    width: 100%;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 64px;
+    padding-bottom: 40px;
+    
+    img {
+        display: flex;
+        margin: 0 auto;
+        margin-bottom: 138px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: var(--pink);
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+`
+
+export const RestaurantsSection = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
@@ -55,7 +81,7 @@ export const BackroundImgCard = styled.div`
     }
 `
 
-export const Header = styled.header`
+export const HeaderCard = styled.header`
     display: flex;
     align-items: center;
     color: var(--pink);  
