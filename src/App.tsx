@@ -1,6 +1,6 @@
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import Restaurants from "./components/Restaurant"
+import Restaurants from "./components/Restaurants"
 import { GlobalStyle } from "./styles/global"
 
 function App() {

@@ -1,22 +1,38 @@
 import styled from "styled-components";
-import imgCard_1 from '../../assets/images/imgCard-1.png'; 
+import imgCard_1 from '../../assets/images/imgCard-1.png';
 
 export const RestauranteSection = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
     row-gap: 48px;
-    margin-bottom: 50px;
+    margin-bottom: 120px;
 `
 
 export const Card = styled.div`
     border: 1px solid var(--pink);
-    width: 472px;   
+    width: 472px;  
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+
+    a {
+        display: inline-block;
+        background-color: var(--pink);
+        padding: 4px 6px;
+        color: white;
+        text-decoration: none;
+    }
+
+    p {
+        font-weight: 400;
+        color: var(--pink);
+        margin-bottom: 16px;
+    }
 `
 
 export const MainCard = styled.main`
     padding: 8px;
-
 `
 
 export const BackroundImgCard = styled.div`
@@ -29,34 +45,35 @@ export const BackroundImgCard = styled.div`
     padding-right: 16px;
     padding-top: 16px;
     padding-bottom: 175px;
+
+    span {
+        background-color: var(--pink);
+        color: white;
+        padding: 4px 6px;
+        font-size: 12px;
+        font-weight: bold;
+    }
 `
 
 export const Header = styled.header`
     display: flex;
     align-items: center;
     color: var(--pink);  
-    font-weight: bold;
     font-size: 18px;
     justify-content: space-between;
 
+    p {
+        font-weight: bold;
+    }
+
     div {
         display: flex;
-        align-items: center;
-        gap: 8px
+        align-items: flex-start;
+        gap: 8px;        
     }
-`
 
-export const Title = styled.h3`
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--pink);
-    margin-top: 8px;
-    margin-bottom: 16px;
-`
-
-export const Description = styled.p`
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--pink);
-    margin-bottom: 16px;
+    h3 {
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
 `

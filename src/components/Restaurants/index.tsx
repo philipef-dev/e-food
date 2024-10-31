@@ -1,89 +1,90 @@
-import { BntDefault, Container } from "../../styles/global"
+import { Container } from "../../styles/global"
 import start from '../../assets/images/star.svg'
 
-import { Card, Description, Header, BackroundImgCard, RestauranteSection, Title, MainCard } from "./styles"
+import { Card, Header, BackroundImgCard, RestauranteSection, MainCard } from "./styles"
 
 const Restaurants = () => (
     <Container>
         <RestauranteSection>
             <Card>
                 <BackroundImgCard>
-                    <BntDefault>Destaque da semana</BntDefault>
-                    <BntDefault>Japonesa</BntDefault>
+                    <span>Destaque da semana</span>
+                    <span>Japonesa</span>
                 </BackroundImgCard>
 
                 <MainCard>
                     <Header>
-                        <Title>Hioki Sushi</Title>
+                        <h3>Hioki Sushi</h3>
                         <div>
                             <p>4.9</p>
                             <img src={start} />
                         </div>
                     </Header>
-                    <Description>
+                    <p>
                         Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                    </Description>
-                    <BntDefault type="button">Saiba mais</BntDefault>
+                    </p>                    
+                    <a href="#"> Saiba mais </a>
                 </MainCard>
             </Card>
 
             <Card>
                 <BackroundImgCard>
-                    <BntDefault>Italiana</BntDefault>
+                    <span>Italina</span>
                 </BackroundImgCard>
 
                 <MainCard>
                     <Header>
-                        <Title>Hioki Sushi</Title>
+                        <h3>Hioki Sushi</h3>
                         <div>
-                            <p>4.6</p>
+                            <p>4.9</p>
                             <img src={start} />
                         </div>
                     </Header>
-                    <Description>
+                    <p>
                         Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                    </Description>
-                    <BntDefault type="button">Saiba mais</BntDefault>
+                    </p>                    
+                    <a href="#"> Saiba mais </a>
                 </MainCard>
             </Card>
 
             <Card>
                 <BackroundImgCard>
-                    <BntDefault>Italiana</BntDefault>
+                    <span>Italina</span>
                 </BackroundImgCard>
 
                 <MainCard>
                     <Header>
-                        <Title>Hioki Sushi</Title>
+                        <h3>Hioki Sushi</h3>
                         <div>
-                            <p>4.6</p>
+                            <p>4.9</p>
                             <img src={start} />
                         </div>
                     </Header>
-                    <Description>
+                    <p>
                         Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                    </Description>
-                    <BntDefault type="button">Saiba mais</BntDefault>
+                    </p>                    
+                    <a href="#"> Saiba mais </a>
                 </MainCard>
             </Card>
 
+
             <Card>
                 <BackroundImgCard>
-                    <BntDefault>Italiana</BntDefault>
+                    <span>Italina</span>
                 </BackroundImgCard>
 
                 <MainCard>
                     <Header>
-                        <Title>Hioki Sushi</Title>
+                        <h3>Hioki Sushi</h3>
                         <div>
-                            <p>4.6</p>
+                            <p>4.9</p>
                             <img src={start} />
                         </div>
                     </Header>
-                    <Description>
+                    <p>
                         Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                    </Description>
-                    <BntDefault type="button">Saiba mais</BntDefault>
+                    </p>                    
+                    <a href="#"> Saiba mais </a>
                 </MainCard>
             </Card>
         </RestauranteSection>
