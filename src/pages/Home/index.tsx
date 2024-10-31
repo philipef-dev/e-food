@@ -4,4 +4,4 @@ const Home = () => (
     <Restaurants/>
 )
 
-export default Home;
+export default Home

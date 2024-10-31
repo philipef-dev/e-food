@@ -1,7 +1,7 @@
 import logoEfood from '../../assets/images/logoE-food.svg';
 import { HeaderDetails } from './styles';
 
-const Details = () => (
+const RestaurantDetails = () => (
     <HeaderDetails>
         <h2>Restaurantes</h2>
         <div>
@@ -11,4 +11,4 @@ const Details = () => (
     </HeaderDetails>
 )
 
-export default Details
+export default RestaurantDetails
