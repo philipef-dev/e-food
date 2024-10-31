@@ -82,7 +82,6 @@ const Restaurants = () => (
                     </MainCard>
                 </Card>
 
-
                 <Card>
                     <BackroundImgCard>
                         <span>Italina</span>
