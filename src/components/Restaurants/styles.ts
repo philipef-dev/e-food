@@ -103,3 +103,9 @@ export const HeaderCard = styled.header`
         margin-bottom: 16px;
     }
 `
+
+export const Modal = styled.div`
+
+
+
+`

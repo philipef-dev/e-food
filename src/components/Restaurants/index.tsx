@@ -44,7 +44,7 @@ const Restaurants = () => (
 
                 <Card>
                     <BackroundImgCard>
-                        <span>Italina</span>
+                        <span>Italiana</span>
                     </BackroundImgCard>
 
                     <MainCard>
@@ -101,6 +101,8 @@ const Restaurants = () => (
                         <Link to="restaurants_details"> Saiba mais </Link>
                     </MainCard>
                 </Card>
+
+                
             </RestaurantsSection>
         </Container>
         <Footer />
