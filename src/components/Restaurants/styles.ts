@@ -104,8 +104,3 @@ export const HeaderCard = styled.header`
     }
 `
 
-export const Modal = styled.div`
-
-
-
-`

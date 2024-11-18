@@ -1,8 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { Link } from "react-router-dom"
+
 
 export const GlobalStyle = createGlobalStyle`
     :root {
         --pink: #E66767;
+        --white: #fff;
     }
 
     * {
@@ -21,11 +24,13 @@ export const Container = styled.div`
         padding-top: 80px;
 `
 
-export const BntDefault = styled.button`
-        background-color: var(--pink);
-        color: white;
+export const BtnDefault = styled(Link)`
+        background-color: var(--white);
+        color: var(--pink);
         padding: 4px 6px;
         font-size: 14px;
+        font-weight: 700;
         font-weight: bold;
         border: none ;
+        text-decoration: none;
 `
