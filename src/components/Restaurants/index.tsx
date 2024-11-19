@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom"
 import Footer from "../Footer"
-import start from '../../assets/images/star.svg'
 import {
     Card,
     BackroundImgCard,
@@ -9,9 +7,15 @@ import {
     RestaurantsSection,
 } from "./styles"
 import logoEfood from '../../assets/images/logoE-food.svg'
-import { Container } from "../../styles/global"
+import { BtnDefault, Container } from "../../styles/global"
+import { RestaurantsProps } from "../../pages/Home"
+import starImg from '../../assets/images/star.svg'
 
-const Restaurants = () => {
+type Props = {
+    restaurants: RestaurantsProps[]
+}
+
+const Restaurants = ({ restaurants }: Props) => {
     return (
         <>
             <RestaurantsHeader>
@@ -22,99 +26,37 @@ const Restaurants = () => {
             </RestaurantsHeader>
             <Container>
                 <RestaurantsSection>
-                    <Card>
-                        <BackroundImgCard>
-                            <span>Destaque da semana</span>
-                            <span>Japonesa</span>
-                        </BackroundImgCard>
+                    {restaurants.map((restaurant) => (
+                        <Card key={restaurant.id}>
+                            <BackroundImgCard style={{ backgroundImage: `url(${restaurant.capa})` }}>
+                                {/* <span>Destaque da semana</span> */}
+                                <span>{restaurant.tipo}</span>
+                            </BackroundImgCard>
 
-                        <MainCard>
-                            <HeaderCard>
-                                <h3>Hioki Sushi</h3>
-                                <div>
-                                    <p>4.9</p>
-                                    <img src={start} />
-                                </div>
-                            </HeaderCard>
-                            <p>
-                                Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                            </p>
-                            <Link
-                                to="restaurants_details"
-                            >
-                                Saiba mais
-                            </Link>
-                        </MainCard>
-                    </Card>
+                            <MainCard>
+                                <HeaderCard>
+                                    <h3>{restaurant.titulo}</h3>
+                                    <div>
+                                        <p>{restaurant.avaliacao}</p>
 
-                    <Card>
-                        <BackroundImgCard>
-                            <span>Italiana</span>
-                        </BackroundImgCard>
-
-                        <MainCard>
-                            <HeaderCard>
-                                <h3>Hioki Sushi</h3>
-                                <div>
-                                    <p>4.9</p>
-                                    <img src={start} />
-                                </div>
-                            </HeaderCard>
-                            <p>
-                                Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                            </p>
-                            <Link to="restaurants_details"> Saiba mais </Link>
-                        </MainCard>
-                    </Card>
-
-                    <Card>
-                        <BackroundImgCard>
-                            <span>Italina</span>
-                        </BackroundImgCard>
-
-                        <MainCard>
-                            <HeaderCard>
-                                <h3>Hioki Sushi</h3>
-                                <div>
-                                    <p>4.9</p>
-                                    <img src={start} />
-                                </div>
-                            </HeaderCard>
-                            <p>
-                                Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                            </p>
-                            <Link to="restaurants_details"> Saiba mais </Link>
-                        </MainCard>
-                    </Card>
-
-                    <Card>
-                        <BackroundImgCard>
-                            <span>Italina</span>
-                        </BackroundImgCard>
-
-                        <MainCard>
-                            <HeaderCard>
-                                <h3>Hioki Sushi</h3>
-                                <div>
-                                    <p>4.9</p>
-                                    <img src={start} />
-                                </div>
-                            </HeaderCard>
-                            <p>
-                                Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!
-                            </p>
-                            <Link to="restaurants_details"> Saiba mais </Link>
-                        </MainCard>
-                    </Card>
+                                        <img src={starImg} alt="" />
+                                    </div>
+                                </HeaderCard>
+                                <p>
+                                    {restaurant.descricao}
+                                </p>
+                                <BtnDefault type="link"
+                                    to={`restaurants_details/${restaurant.id}`}>
+                                    Saiba mais
+                                </BtnDefault>
+                            </MainCard>
+                        </Card>
+                    ))}
                 </RestaurantsSection>
-
-
             </Container>
             <Footer />
         </>
     )
 }
-
-
 
 export default Restaurants

@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import headerImg from '../../assets/images/fundoHeader.png'
-import imgCard_1 from '../../assets/images/imgCard-1.png';
 
 export const RestaurantsHeader = styled.header`
-    background-image: url(${headerImg});
     width: 100%;
     display: block;
     background-size: cover;
@@ -24,7 +21,6 @@ export const RestaurantsHeader = styled.header`
         text-align: center;
         margin-bottom: 20px;
     }
-
 `
 
 export const RestaurantsSection = styled.section`
@@ -62,7 +58,6 @@ export const MainCard = styled.main`
 `
 
 export const BackroundImgCard = styled.div`
-    background-image: url(${imgCard_1});
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
