@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import headerImg from '../../assets/images/fundoHeader.png'
 import { Link } from 'react-router-dom'
 
 export const HeaderDetails = styled.div`
-    background-image: url(${headerImg});
     width: 100%;
     display: block;
     background-size: cover;
     background-repeat: no-repeat;
+
     padding: 65px 170px;    
     display: flex;
     justify-content: space-between;
@@ -25,18 +24,35 @@ export const BannerDetails = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     padding: 24px 170px;
+    position: relative;    
 
+    &::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        content: '';
+    }
+
+
+    
     p {
         font-size: 32px;
         font-weight: 100;
-        color: white;
+        color: var(--white);
         margin-bottom: 156px;
+        position: sticky;
+        z-index: 1;
     } 
     
     h2 {
         font-weight: 900;
         font-size: 32px;
-        color: white
+        color: white;
+        position: sticky;
+        z-index: 1;
     }
 `
 
