@@ -35,8 +35,6 @@ export const BannerDetails = styled.div`
         background-color: rgba(0, 0, 0, 0.7);
         content: '';
     }
-
-
     
     p {
         font-size: 32px;
