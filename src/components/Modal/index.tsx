@@ -2,21 +2,26 @@ import { BtnDefault } from "../../styles/global";
 import { Modal, ModalContent } from "./styles";
 
 import iconClose from '../../assets/images/btnClose.svg'
+import { useDispatch } from "react-redux";
+import { add, open } from "../../store/reducers/cart";
+
+import { MenuItem } from '../../pages/Home'
 
 type Props = {
     isVisible: boolean;
     onClose: () => void;
-    selectItem?: {
-        nome: string;
-        descricao: string;
-        foto: string;
-        preco: number;
-        porcao: string;
-    }
+    selectItem?: MenuItem
 }
 
 const DetailsModal = ({ isVisible, onClose, selectItem }: Props) => {
-    if(!isVisible || !selectItem) return null;
+    const dispatch = useDispatch()
+
+    const openCart = () => {
+        dispatch(open())
+        dispatch(add(selectItem!))
+    }
+
+    if (!isVisible || !selectItem) return null;
 
     return (
         <Modal className={isVisible ? 'visible' : ''}>
@@ -39,7 +44,12 @@ const DetailsModal = ({ isVisible, onClose, selectItem }: Props) => {
 
                         Serve: {selectItem.porcao}
                     </p>
-                    <BtnDefault to="">Adicionar ao carrinho - R$ {selectItem.preco}</BtnDefault>
+                    <BtnDefault
+                        to=""
+                        onClick={openCart}
+                    >
+                        Adicionar ao carrinho - R$ {selectItem.preco}
+                    </BtnDefault>
                 </div>
             </ModalContent>
             <div className='overlay' onClick={onClose}></div>

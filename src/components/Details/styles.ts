@@ -64,7 +64,6 @@ export const SectionCardsDetails = styled.section`
 
 export const CardDetails = styled.div`
     background-color: var(--pink);
-    width: 320px;
     padding: 8px;
     display: flex;
     flex-direction: column;

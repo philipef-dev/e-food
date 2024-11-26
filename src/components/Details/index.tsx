@@ -14,7 +14,6 @@ import {
     StyledLink
 } from './styles';
 
-
 const RestaurantDetails = () => {
     const { id } = useParams()
     const [modal, setModal] = useState(false)
@@ -61,8 +60,8 @@ const RestaurantDetails = () => {
                 <h2> 0 produtos(s) no carrinho</h2>
             </HeaderDetails>
             <BannerDetails style={{ backgroundImage: `url(${restaurants.capa})` }}>
-                    <p>{restaurants.tipo}</p>
-                    <h2>{restaurants.titulo}</h2>
+                <p>{restaurants.tipo}</p>
+                <h2>{restaurants.titulo}</h2>
             </BannerDetails>
             <Container>
                 <SectionCardsDetails>
