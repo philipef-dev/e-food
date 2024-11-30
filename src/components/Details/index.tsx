@@ -15,15 +15,15 @@ import {
 } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootReducer } from '../../store';
-import { open } from '../../store/reducers/cart';
+import { openCart } from '../../store/reducers/cart';
 
 const RestaurantDetails = () => {
     const { pratos } = useSelector((state: RootReducer) => state.cart)
 
     const dispatch = useDispatch()
 
-    const openCart = () => {
-        dispatch(open())
+    const handleOpenCart = () => {
+        dispatch(openCart())
     }
 
     const { id } = useParams()
@@ -68,7 +68,7 @@ const RestaurantDetails = () => {
                 <div>
                     <img src={logoEfood} alt="Logo e-food" />
                 </div>
-                <h2 onClick={openCart}> {pratos.length} produtos(s) no carrinho</h2>
+                <h2 onClick={handleOpenCart}> {pratos.length} produtos(s) no carrinho</h2>
             </HeaderDetails>
             <BannerDetails style={{ backgroundImage: `url(${restaurants.capa})` }}>
                 <p>{restaurants.tipo}</p>

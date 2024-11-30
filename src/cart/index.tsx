@@ -1,20 +1,19 @@
 import { CartContainer, Item, Overlay, SideBar, Amount } from "./styles"
 import { useDispatch, useSelector } from "react-redux"
 import { RootReducer } from "../store"
-import { close, remove } from "../store/reducers/cart"
-import { BtnDefault } from "../styles/global"
+import { checkoutOpen, closeCart, removeToCart } from "../store/reducers/cart"
 import { formatPrice } from "../helpers/formatPrice"
 
 const Cart = () => {
-    const { isOpen, pratos } = useSelector((state: RootReducer) => state.cart)
+    const {  isOpenCart, pratos } = useSelector((state: RootReducer) => state.cart)
     const dispatch = useDispatch()
 
-    const closeCart = () => {
-        dispatch(close())
+    const closeCartHandler = () => {
+        dispatch(closeCart())
     }
 
     const deleteItem = (id: number) => {
-        dispatch(remove(id))
+        dispatch(removeToCart(id))
     }
 
     const getTotalPrice = () => {
@@ -24,9 +23,13 @@ const Cart = () => {
         }, 0)
     }
 
+    const checkout = () => {
+        dispatch(checkoutOpen())
+    }
+
     return (
-        <CartContainer className={isOpen ? 'is-open' : ''} >
-            <Overlay onClick={closeCart} />
+        <CartContainer className={isOpenCart ? 'is-open' : ''} >
+            <Overlay onClick={closeCartHandler} />
             <SideBar>
                 <ul>
                     {pratos.map((prato) => {
@@ -46,11 +49,14 @@ const Cart = () => {
                     })}
                 </ul>
                 <Amount>
-                    <p>Valor total:{formatPrice(getTotalPrice())}</p>
-                    <span></span>
-
+                    <p>Valor total: <span> {formatPrice(getTotalPrice())}</span></p>
                 </Amount>
-                <BtnDefault to="#">Continuar com a entrega</BtnDefault>
+                <button
+                    type="button"
+                    onClick={checkout}
+                >
+                    Continuar com a entrega
+                </button>
             </SideBar>
         </CartContainer>
     )

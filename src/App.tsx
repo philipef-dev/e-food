@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom"
 import { store } from "./store"
 import { Provider } from "react-redux"
 import Cart from "./cart"
+import Checkout from "./components/Checkout"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <GlobalStyle />
         <Rotas />
         <Cart />
+        <Checkout />
       </BrowserRouter>
     </Provider>
   )
