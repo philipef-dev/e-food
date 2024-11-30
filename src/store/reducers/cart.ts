@@ -29,21 +29,30 @@ const cartSlice = createSlice({
         removeToCart: (state, action: PayloadAction<number>) => {
             state.pratos = state.pratos.filter((prato) => prato.id !== action.payload)
         },
-
         openCart: (state) => {
             state.isOpenCart = true
         },
-
         closeCart: (state) => {
             state.isOpenCart = false
         },
-
         checkoutOpen: (state) => {
             state.checkoutOpen = true
+        },
+
+        checkoutClose: (state) => {
+            state.checkoutOpen = false
         }
 
     },
 })
 
-export const { openCart, closeCart, addToCart, removeToCart, checkoutOpen } = cartSlice.actions
+export const {
+    openCart,
+    closeCart,
+    addToCart,
+    removeToCart,
+    checkoutOpen,
+    checkoutClose
+} = cartSlice.actions
+
 export default cartSlice.reducer
