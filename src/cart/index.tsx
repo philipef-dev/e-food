@@ -50,7 +50,7 @@ const Cart = () => {
                     <span></span>
 
                 </Amount>
-                <BtnDefault to="">Continuar com a entrega</BtnDefault>
+                <BtnDefault to="#">Continuar com a entrega</BtnDefault>
             </SideBar>
         </CartContainer>
     )

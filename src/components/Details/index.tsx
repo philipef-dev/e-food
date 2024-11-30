@@ -13,8 +13,19 @@ import {
     SectionCardsDetails,
     StyledLink
 } from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootReducer } from '../../store';
+import { open } from '../../store/reducers/cart';
 
 const RestaurantDetails = () => {
+    const { pratos } = useSelector((state: RootReducer) => state.cart)
+
+    const dispatch = useDispatch()
+
+    const openCart = () => {
+        dispatch(open())
+    }
+
     const { id } = useParams()
     const [modal, setModal] = useState(false)
     const [selectItem, setSelectedItem] = useState<MenuItem | null>(null)
@@ -57,7 +68,7 @@ const RestaurantDetails = () => {
                 <div>
                     <img src={logoEfood} alt="Logo e-food" />
                 </div>
-                <h2> 0 produtos(s) no carrinho</h2>
+                <h2 onClick={openCart}> {pratos.length} produtos(s) no carrinho</h2>
             </HeaderDetails>
             <BannerDetails style={{ backgroundImage: `url(${restaurants.capa})` }}>
                 <p>{restaurants.tipo}</p>
