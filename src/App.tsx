@@ -1,10 +1,11 @@
-import { GlobalStyle } from "./styles/global"
-import Rotas from "./routes"
+import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 import { store } from "./store"
-import { Provider } from "react-redux"
+import Rotas from "./routes"
 import Cart from "./cart"
 import Checkout from "./components/Checkout"
+import Payment from "./components/Payment"
+import { GlobalStyle } from "./styles/global"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Rotas />
         <Cart />
         <Checkout />
+        <Payment />
       </BrowserRouter>
     </Provider>
   )

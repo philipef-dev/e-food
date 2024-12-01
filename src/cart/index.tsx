@@ -23,9 +23,9 @@ const Cart = () => {
         }, 0)
     }
 
-    const checkout = () => {
+    const checkoutPage = () => {
         dispatch(checkoutOpen())
-    }
+    }    
 
     return (
         <CartContainer className={isOpenCart ? 'is-open' : ''} >
@@ -53,7 +53,7 @@ const Cart = () => {
                 </Amount>
                 <button
                     type="button"
-                    onClick={checkout}
+                    onClick={checkoutPage}
                 >
                     Continuar com a entrega
                 </button>

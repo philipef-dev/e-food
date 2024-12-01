@@ -34,18 +34,22 @@ export const Row = styled.div`
 
   input {
     height: 32px;
-    margin-bottom: 8px;
     padding: 0 8px;
-
     font-weight: bold;
     color: black;
-    
+    margin-bottom: 2px;
     border: 2px solid var(--white);
     background-color: var(--white);
   }
 
+  small {
+     margin-bottom: 8px;
+     
+  }
+
   &.mid-size {
     flex-direction: row;
+    margin-bottom: 8px;
     gap: 34px;
 
     input {

@@ -4,12 +4,14 @@ import { MenuItem } from '../../pages/Home'
 type CartState = {
     isOpenCart: boolean
     checkoutOpen: boolean
+    paymentOpen: boolean
     pratos: MenuItem[]
 }
 
 const initialState: CartState = {
     isOpenCart: false,
     checkoutOpen: false,
+    paymentOpen: false,
     pratos: []
 }
 
@@ -38,11 +40,15 @@ const cartSlice = createSlice({
         checkoutOpen: (state) => {
             state.checkoutOpen = true
         },
-
         checkoutClose: (state) => {
             state.checkoutOpen = false
+        },
+        paymentOpen: (state) => {
+            state.paymentOpen = true
+        },
+        paymentClose: (state) => {
+            state.paymentOpen = false
         }
-
     },
 })
 
@@ -52,7 +58,9 @@ export const {
     addToCart,
     removeToCart,
     checkoutOpen,
-    checkoutClose
+    checkoutClose,
+    paymentOpen,
+    paymentClose
 } = cartSlice.actions
 
 export default cartSlice.reducer
