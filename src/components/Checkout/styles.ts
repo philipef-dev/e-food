@@ -1,27 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    justify-content: end;
-    display: flex;
-    z-index: 1;
-    display: none;
-
-    &.address-is-open {
-        display: flex;
-    }
-
-    h3 {
-        font-size: 16px;
-        margin-bottom: 16px;
-        color: var(--white);
-    }    
-`
-export const Row = styled.div`
+export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
 

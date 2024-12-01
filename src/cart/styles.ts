@@ -4,7 +4,7 @@ import btnDeleteItem from '../assets/images/btnDeleteItem.svg'
 import { BtnDefault } from "../styles/global";
 
 
-export const CartContainer = styled.div`
+export const SideBarContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
@@ -15,7 +15,9 @@ export const CartContainer = styled.div`
     z-index: 1;
     display: none;
 
-    &.is-open {
+    &.is-open-cart, 
+    &.address-is-open, 
+    &.payment-is-open {
         display: flex;
     }    
 `
@@ -40,6 +42,12 @@ export const SideBar = styled.aside`
         max-width: 100%;
         display: block;
         text-align: center;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 16px;
+        color: var(--white);
     }
 `
 

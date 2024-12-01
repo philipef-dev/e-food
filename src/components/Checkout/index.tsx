@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { checkoutClose, openCart, paymentOpen } from "../../store/reducers/cart"
 import { RootReducer } from "../../store"
-import { Overlay, SideBar } from "../../cart/styles"
+import { Overlay, SideBar, SideBarContainer } from "../../cart/styles"
 import * as S from './styles'
 
 import * as Yup from 'yup';
@@ -9,12 +9,7 @@ import { useFormik } from "formik"
 
 const Checkout = () => {
     const { checkoutOpen } = useSelector((state: RootReducer) => state.cart)
-    const dispatch = useDispatch()
-
-    const backtoCart = () => {
-        dispatch(checkoutClose())
-        dispatch(openCart())
-    }
+    const dispatch = useDispatch()    
 
     const form = useFormik({
         initialValues: {
@@ -50,6 +45,11 @@ const Checkout = () => {
         },
     })
 
+    const backtoCart = () => {
+        dispatch(checkoutClose())
+        dispatch(openCart())
+    }
+
     const getErrorMessage = (fieldName: keyof typeof form.errors) => {
         const isTouched = fieldName in form.touched
         const isError = fieldName in form.errors
@@ -62,11 +62,11 @@ const Checkout = () => {
 
     return (
         <form onSubmit={form.handleSubmit}>
-            <S.Container className={checkoutOpen ? "address-is-open" : ''}>
+            <SideBarContainer className={checkoutOpen ? "address-is-open" : ''}>
                 <Overlay />
                 <SideBar>
-                    <h3>Entrega</h3>
-                    <S.Row>
+                    <h2>Entrega</h2>
+                    <S.InputGroup>
                         <label htmlFor="fullName">Quem irá receber *</label>
                         <input
                             type="text"
@@ -77,9 +77,9 @@ const Checkout = () => {
                             onBlur={form.handleBlur}
                         />
                         <small>{getErrorMessage('fullName')}</small>
-                    </S.Row>
+                    </S.InputGroup>
 
-                    <S.Row>
+                    <S.InputGroup>
                         <label htmlFor="address">Endereço *</label>
                         <input
                             type="text"
@@ -90,9 +90,9 @@ const Checkout = () => {
                             onBlur={form.handleBlur}
                         />
                         <small>{getErrorMessage('address')}</small>
-                    </S.Row>
+                    </S.InputGroup>
 
-                    <S.Row>
+                    <S.InputGroup>
                         <label htmlFor="city">Cidade *</label>
                         <input
                             type="text"
@@ -103,9 +103,9 @@ const Checkout = () => {
                             onBlur={form.handleBlur}
                         />
                         <small>{getErrorMessage('city')}</small>
-                    </S.Row>
+                    </S.InputGroup>
 
-                    <S.Row className="mid-size">
+                    <S.InputGroup className="mid-size">
                         <div>
                             <label htmlFor="zipCode">CEP *</label>
                             <input
@@ -131,9 +131,9 @@ const Checkout = () => {
                             />
                             <small>{getErrorMessage('houseNumber')}</small>
                         </div>
-                    </S.Row>
+                    </S.InputGroup>
 
-                    <S.Row>
+                    <S.InputGroup>
                         <div>
                             <label htmlFor="complement">Complemento (opcional)</label>
                             <input
@@ -146,10 +146,9 @@ const Checkout = () => {
                             />
                             <small>{getErrorMessage('complement')}</small>
                         </div>
-                    </S.Row>
+                    </S.InputGroup>
 
                     <div style={{ display: "flex", flexDirection: "column", gap: '10px' }}>
-
                         <button
                             type="submit"
                             disabled={!form.isValid}
@@ -164,7 +163,7 @@ const Checkout = () => {
                         </button>
                     </div>
                 </SideBar>
-            </S.Container>
+            </SideBarContainer>
         </form>
     )
 }

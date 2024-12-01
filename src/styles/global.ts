@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const GlobalStyle = createGlobalStyle`
     :root {
         --pink: #E66767;
-        --white: #fff;
+        --white: #FFF;
     }
 
     * {

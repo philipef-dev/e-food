@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { checkoutOpen, closeCart, removeToCart } from "../store/reducers/cart"
 import { RootReducer } from "../store"
 import { formatPrice } from "../helpers/formatPrice"
-import { CartContainer, Item, Overlay, SideBar, Amount } from "./styles"
+import { SideBarContainer, Item, Overlay, SideBar, Amount } from "./styles"
 
 const Cart = () => {
     const {  isOpenCart, pratos } = useSelector((state: RootReducer) => state.cart)
@@ -28,7 +28,7 @@ const Cart = () => {
     }    
 
     return (
-        <CartContainer className={isOpenCart ? 'is-open' : ''} >
+        <SideBarContainer className={isOpenCart ? 'is-open-cart' : ''} >
             <Overlay onClick={closeSideBartHandler} />
             <SideBar>
                 <ul>
@@ -58,7 +58,7 @@ const Cart = () => {
                     Continuar com a entrega
                 </button>
             </SideBar>
-        </CartContainer>
+        </SideBarContainer>
     )
 }
 
