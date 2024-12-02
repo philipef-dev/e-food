@@ -57,6 +57,7 @@ const Cart = () => {
                             <div>
                                 <p>Valor total: </p>
                             </div>
+                            
                             <span>
                                 {formatPrice(getTotalPrice())}
                             </span>
