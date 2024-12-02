@@ -8,7 +8,7 @@ import * as S from './styles'
 const Cart = () => {
     const { cartIsOpen, items: pratos } = useSelector((state: RootReducer) => state.cart)
     const dispatch = useDispatch()
-    
+
     const closeSideBar = () => {
         dispatch(closeCart())
     }
@@ -54,7 +54,12 @@ const Cart = () => {
                             })}
                         </ul>
                         <Amount>
-                            <p>Valor total: <span> {formatPrice(getTotalPrice())}</span></p>
+                            <div>
+                                <p>Valor total: </p>
+                            </div>
+                            <span>
+                                {formatPrice(getTotalPrice())}
+                            </span>
                         </Amount>
                         <Button
                             type="button"
