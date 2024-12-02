@@ -18,7 +18,7 @@ import { RootReducer } from '../../store';
 import { openCart } from '../../store/reducers/cart';
 
 const RestaurantDetails = () => {
-    const { pratos } = useSelector((state: RootReducer) => state.cart)
+    const { items: pratos } = useSelector((state: RootReducer) => state.cart)
 
     const dispatch = useDispatch()
 
@@ -66,7 +66,7 @@ const RestaurantDetails = () => {
             <HeaderDetails>
                 <StyledLink to={'/'}>Restaurantes</StyledLink>
                 <div>
-                    <img src={logoEfood} alt="Logo e-food" />
+                    <img src={logoEfood} alt="Logo E-Food" />
                 </div>
                 <h2 onClick={handleOpenCart}> {pratos.length} produtos(s) no carrinho</h2>
             </HeaderDetails>
@@ -84,7 +84,9 @@ const RestaurantDetails = () => {
                             <h3>{item.nome}</h3>
                             <p> {getDescription(item.descricao)}</p>
                             <BtnDefault to=""
-                                onClick={() => handleOpenModal(item)}>Adicionar ao carrinho
+                                onClick={() => handleOpenModal(item)}
+                            >
+                                Adicionar ao carrinho
                             </BtnDefault>
                         </CardDetails>
                     ))}

@@ -9,6 +9,7 @@ export const Modal = styled.div`
     display: none;
     justify-content: center;
     align-items: center;   
+    z-index: 1;
 
     img {
         width: 280px;

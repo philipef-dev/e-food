@@ -1,15 +1,21 @@
 import { useDispatch, useSelector } from "react-redux"
-import { checkoutClose, openCart, paymentOpen } from "../../store/reducers/cart"
+import { addAddressInfos, closeAddress, closeCart, openCart, openPayment } from "../../store/reducers/cart"
 import { RootReducer } from "../../store"
-import { Overlay, SideBar, SideBarContainer } from "../../cart/styles"
+import { Button, ButtonContainer, SideBar, SideBarContainer } from "../../cart/styles"
 import * as S from './styles'
 
 import * as Yup from 'yup';
 import { useFormik } from "formik"
 
 const Checkout = () => {
-    const { checkoutOpen } = useSelector((state: RootReducer) => state.cart)
-    const dispatch = useDispatch()    
+    const { adressOpen, items: pratos } = useSelector((state: RootReducer) => state.cart)
+    const dispatch = useDispatch()
+
+    const getTotalPrice = () => {
+        return pratos.reduce((acum, valorAtual) => {
+            return (acum += valorAtual.preco!);
+        }, 0);
+    };
 
     const form = useFormik({
         initialValues: {
@@ -39,14 +45,32 @@ const Checkout = () => {
                 .required('Campo obrigatório'),
         }),
         onSubmit: (values) => {
-            console.log(values)
-            dispatch(checkoutClose())
-            dispatch(paymentOpen())
+            dispatch(
+                addAddressInfos({
+                    products: pratos.map((prato) => ({
+                        id: prato.id,
+                        price: getTotalPrice(),
+                    })),
+
+                    delivery: {
+                        receiver: values.fullName,
+                        address: {
+                            description: values.address,
+                            city: values.city,
+                            zipCode: values.zipCode,
+                            number: Number(values.houseNumber),
+                            complement: values.complement,
+                        },
+                    },
+                })
+            );
+            dispatch(openPayment());
+            dispatch(closeAddress());
         },
     })
 
     const backtoCart = () => {
-        dispatch(checkoutClose())
+        dispatch(closeAddress())
         dispatch(openCart())
     }
 
@@ -60,10 +84,15 @@ const Checkout = () => {
         return ''
     }
 
+    const closeSideBar = () => {
+        dispatch(closeCart())
+        dispatch(closeAddress())
+    }
+
     return (
         <form onSubmit={form.handleSubmit}>
-            <SideBarContainer className={checkoutOpen ? "address-is-open" : ''}>
-                <Overlay />
+            <SideBarContainer className={adressOpen ? "address-is-open" : ''}>
+                <S.Overlay onClick={closeSideBar}/>
                 <SideBar>
                     <h2>Entrega</h2>
                     <S.InputGroup>
@@ -80,7 +109,7 @@ const Checkout = () => {
                     </S.InputGroup>
 
                     <S.InputGroup>
-                        <label htmlFor="address">Endereço *</label>
+                        <label htmlFor="address">Endereço*</label>
                         <input
                             type="text"
                             id="address"
@@ -93,7 +122,7 @@ const Checkout = () => {
                     </S.InputGroup>
 
                     <S.InputGroup>
-                        <label htmlFor="city">Cidade *</label>
+                        <label htmlFor="city">Cidade*</label>
                         <input
                             type="text"
                             id="city"
@@ -107,7 +136,7 @@ const Checkout = () => {
 
                     <S.InputGroup className="mid-size">
                         <div>
-                            <label htmlFor="zipCode">CEP *</label>
+                            <label htmlFor="zipCode">CEP*</label>
                             <input
                                 type="text"
                                 id="zipCode"
@@ -120,7 +149,7 @@ const Checkout = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="houseNumber">Número *</label>
+                            <label htmlFor="houseNumber">Número*</label>
                             <input
                                 type="text"
                                 id="houseNumber"
@@ -147,21 +176,20 @@ const Checkout = () => {
                             <small>{getErrorMessage('complement')}</small>
                         </div>
                     </S.InputGroup>
-
-                    <div style={{ display: "flex", flexDirection: "column", gap: '10px' }}>
-                        <button
+                    <ButtonContainer>
+                        <Button
                             type="submit"
                             disabled={!form.isValid}
                         >
                             Continuar com o pagamento
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             type="button"
                             onClick={backtoCart}
                         >
                             Voltar para o carrinho
-                        </button>
-                    </div>
+                        </Button>
+                    </ButtonContainer>
                 </SideBar>
             </SideBarContainer>
         </form>

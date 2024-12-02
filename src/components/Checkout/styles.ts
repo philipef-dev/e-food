@@ -19,11 +19,14 @@ export const InputGroup = styled.div`
     margin-bottom: 2px;
     border: 2px solid var(--white);
     background-color: var(--white);
+    color: #4B4B4B;
+    font-weight: 700;
+    font-size: 14px;
   }
 
   small {
      margin-bottom: 8px;
-     
+    color: #4B4B4B;     
   }
 
   &.mid-size {
@@ -36,5 +39,12 @@ export const InputGroup = styled.div`
         margin-top: 8px;
     }
   }
+`
 
+export const Overlay = styled.div`
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
 `

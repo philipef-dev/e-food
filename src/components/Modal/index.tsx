@@ -3,9 +3,10 @@ import { Modal, ModalContent } from "./styles";
 
 import iconClose from '../../assets/images/btnClose.svg'
 import { useDispatch } from "react-redux";
-import { addToCart, openCart } from "../../store/reducers/cart";
+import { addCart, openCart } from "../../store/reducers/cart";
 
 import { MenuItem } from '../../pages/Home'
+import { formatPrice } from "../../helpers/formatPrice";
 
 type Props = {
     isVisible: boolean;
@@ -18,7 +19,7 @@ const DetailsModal = ({ isVisible, onClose, selectItem }: Props) => {
 
     const handleOpenCart = () => {
         dispatch(openCart())
-        dispatch(addToCart(selectItem!))
+        dispatch(addCart(selectItem!))
         onClose()
     }
 
@@ -47,9 +48,9 @@ const DetailsModal = ({ isVisible, onClose, selectItem }: Props) => {
                     </p>
                     <BtnDefault
                         to=""
-                        onClick={handleOpenCart}                        
+                        onClick={handleOpenCart}
                     >
-                        Adicionar ao carrinho - R$ {selectItem.preco}
+                        Adicionar ao carrinho - {formatPrice(selectItem.preco)}
                     </BtnDefault>
                 </div>
             </ModalContent>

@@ -15,7 +15,7 @@ export const SideBarContainer = styled.div`
     z-index: 1;
     display: none;
 
-    &.is-open-cart, 
+    &.cart-is-open, 
     &.address-is-open, 
     &.payment-is-open {
         display: flex;
@@ -23,12 +23,12 @@ export const SideBarContainer = styled.div`
 `
 
 export const Overlay = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0, 0.73);   
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0, 0.73);
 `
 
 export const SideBar = styled.aside`
@@ -49,6 +49,15 @@ export const SideBar = styled.aside`
         margin-bottom: 16px;
         color: var(--white);
     }
+
+    .message-cart-empty {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-weight: 700;        
+    }    
 `
 
 export const Item = styled.li`
@@ -86,7 +95,7 @@ export const Item = styled.li`
         right: 10px;
         bottom: 10px;
         cursor: pointer;   
-    }
+    }    
 `
 
 export const Amount = styled.div`
@@ -94,5 +103,20 @@ export const Amount = styled.div`
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 16px;   
-` 
-    
+`
+
+export const ButtonContainer = styled.div`
+    margin-top: 24px;
+`
+
+export const Button = styled.button`
+    width: 100%;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: var(--white);
+    color: var(--pink);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 8px;
+`
