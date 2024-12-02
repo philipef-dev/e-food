@@ -225,8 +225,6 @@ const Payment = () => {
                             </ButtonContainer>
                         </>
                     )}
-
-
                 </SideBar>
             </SideBarContainer>
         </form>
