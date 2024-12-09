@@ -38,7 +38,7 @@ const Payment = () => {
                 .min(new Date().getFullYear(), 'Ano inválido')
                 .required('Campo obrigatório'),
             codeCard: Yup.string()
-                .matches(/^\d{3,4}$/, 'CVV inválido')
+                .matches(/^\d{3}$/, 'CVV inválido')
                 .required('Campo obrigatório'),
         }),
         onSubmit: (values) => {
@@ -145,7 +145,7 @@ const Payment = () => {
                         <>
                             <h2>Pagamento - Valor a pagar {formatPrice(getTotalPrice())}</h2>
                             <InputGroup>
-                                <label htmlFor="nameOwnerCard">Nome no cartão*</label>
+                                <label htmlFor="nameOwnerCard">Nome no cartão* Teste</label>
                                 <input
                                     type="text"
                                     id="nameOwnerCard"
