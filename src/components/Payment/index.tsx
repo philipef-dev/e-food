@@ -145,7 +145,7 @@ const Payment = () => {
                         <>
                             <h2>Pagamento - Valor a pagar {formatPrice(getTotalPrice())}</h2>
                             <InputGroup>
-                                <label htmlFor="nameOwnerCard">Nome no cartão* Teste</label>
+                                <label htmlFor="nameOwnerCard">Nome no cartão</label>
                                 <input
                                     type="text"
                                     id="nameOwnerCard"
